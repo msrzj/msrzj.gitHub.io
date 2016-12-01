@@ -1,7 +1,40 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<html xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <title>朱豪</title>
+    <meta name="content-type" content="text/html; charset=UTF-8">  <!--解决浏览器乱码-->
+</head>
+<body onload="myPDF(1)">
+<h1>很高兴您能查看我的资料</h1>
+<div >
+    <div style="float: left; width:20%; text-align: center;">
+        <a style="text-decoration: none;" onclick="myPDF(1);">朱豪iOS简历</a>
+        </br>
+        <!--<a style="text-decoration: none;" onclick="myPDF(2);">葛宁iOS简历</a>-->
+    </div>
+    <div style="float: right; width: 78%">
+        <iframe id="showPDF" width="80%" height=""></iframe>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function myPDF(i) {
+//        alert("走了");
+        var getIframe = document.getElementById("showPDF"); // 得到iframe控件
+        getIframe.style.height = window.screen.height - 100+"px";
+        getIframe.style.width = window.screen.width;
+        var PDFname;
+        var a = i;
+        switch (a){
+            case 1:
+               PDFname = "ZHiOSResume.pdf";break;
+            case 2:
+                PDFname = "gening.pdf";break;
+        }
+        getIframe.src = PDFname;
+    }
+
+</script>
 </body>
 </html>
